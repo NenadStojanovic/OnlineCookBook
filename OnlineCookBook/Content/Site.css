@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height:100vh;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.main-index-div{
+    background-image:url('img/cookBook Wallpaper.jpg');
+    width:100%;
+    height:100%;
+    float:left;
+    background-position:center;
+
+}
+
+.main-title{
+    text-align:center;
+    font-size:35px;
+    font-weight:bold;
+    padding-top:150px;
+    margin: 0 auto;
+}
+
+.specific-category{
+    width:250px;
+    height:250px;
+    float:left;
+    
+    margin:25px;
+    display:table;
+}
+img{
+    width:100%;
+    height:100%;
+}
+.breakfast-img{
+    background-position:center;
+
+}
+
+.lunch-img{
+    background-image:url('img/lunch_img.jpg');
+    background-position:center;
+
+}
+.dinner-img{
+    background-image:url('img/dinner_img.jpg');
+    background-position:center;
+    
+
+}
+
+.body-content{
+   
+}
+
+.categories-div{
+    display:table;
+    margin: 0 auto;
+}
+
+.full-category{
+    float:left;
+    text-align:center;
+    display:table;
+    margin:0 auto;
+}
+.category-title{
+    display:block;
+    text-align:center;
+    font-size:15px;
+    font-weight:bold;
+    color:white;
+}
