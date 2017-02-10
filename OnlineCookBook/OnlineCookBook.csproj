@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -186,6 +187,11 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="MongoDB_DataLayer\DataLayer.cs" />
+    <Compile Include="MongoDB_DataLayer\Entities\Bill.cs" />
+    <Compile Include="MongoDB_DataLayer\Entities\Comment.cs" />
+    <Compile Include="MongoDB_DataLayer\Entities\Ingredient.cs" />
+    <Compile Include="MongoDB_DataLayer\Entities\Recipe.cs" />
+    <Compile Include="MongoDB_DataLayer\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -250,7 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="MongoDB_DataLayer\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
