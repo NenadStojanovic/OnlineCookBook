@@ -1,7 +1,12 @@
-﻿
+﻿@model List<OnlineCookBook.MongoDB_DataLayer.Entities.Recipe>
 @{
     ViewBag.Title = "RecepiesView";
 }
 
-<h2>RecepiesView</h2>
+@foreach (var recipe in Model)
+{
+    <h2>@recipe.Name</h2>
+    <h2>@recipe.ShortDsc</h2>
+}
+
 

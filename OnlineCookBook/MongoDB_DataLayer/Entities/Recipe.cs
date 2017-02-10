@@ -16,23 +16,23 @@ namespace OnlineCookBook.MongoDB_DataLayer.Entities
 
         public string Category { get; set; }
 
-        public int Ptime { get; set; }
+        public int PrepareTime { get; set; }
 
-        public string Longd { get; set; }
+        public string LongDsc { get; set; }
 
-        public string Shortd { get; set; }
+        public string ShortDsc { get; set; }
 
         public string Status { get; set; }
 
         public string Image { get; set; }
 
-        public MongoDBRef User { get; set; }
+        public User User { get; set; }
 
-        public List<MongoDBRef> Ingredients { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
 
         public Recipe()
         {
-            Ingredients = new List<MongoDBRef>();
+            Ingredients = new List<Ingredient>();
         }
     }
 }

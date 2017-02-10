@@ -16,6 +16,8 @@ namespace OnlineCookBook.MongoDB_DataLayer.Entities
 
         public string Content { get; set; }
 
-        public MongoDBRef User { get; set; }
+        public User User { get; set; }
+
+        public ObjectId RecipeId { get; set; }
     }
 }

@@ -53,10 +53,6 @@
       <HintPath>..\packages\MongoDB.Driver.Core.2.4.2\lib\net45\MongoDB.Driver.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Driver.Legacy, Version=2.4.2.27, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\mongocsharpdriver.2.4.2\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -186,8 +182,9 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\RecepiesViewModel.cs" />
     <Compile Include="MongoDB_DataLayer\DataLayer.cs" />
-    <Compile Include="MongoDB_DataLayer\Entities\Bill.cs" />
+    <Compile Include="MongoDB_DataLayer\Entities\Order.cs" />
     <Compile Include="MongoDB_DataLayer\Entities\Comment.cs" />
     <Compile Include="MongoDB_DataLayer\Entities\Ingredient.cs" />
     <Compile Include="MongoDB_DataLayer\Entities\Recipe.cs" />
@@ -256,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\ViewScripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

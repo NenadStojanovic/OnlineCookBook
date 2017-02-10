@@ -8,7 +8,7 @@ using MongoDB.Driver;
 
 namespace OnlineCookBook.MongoDB_DataLayer.Entities
 {
-    public class Bill
+    public class Order
     {
         public ObjectId Id { get; set; }
 
@@ -16,13 +16,15 @@ namespace OnlineCookBook.MongoDB_DataLayer.Entities
 
         public float Fprice { get; set; }//full price
 
-        public MongoDBRef User { get; set; }
+        public ObjectId UserId { get; set; }
 
-        public List<MongoDBRef> Ingredients { get; set; }
+        public string status { get; set; } //pending ili delivered
 
-        public Bill()
+        public List<Ingredient> Ingredients { get; set; }
+
+        public Order()
         {
-            Ingredients = new List<MongoDBRef>();
+            Ingredients = new List<Ingredient>();
         }
     }
 }
