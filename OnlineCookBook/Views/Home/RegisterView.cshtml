@@ -36,6 +36,7 @@
 
 </style>
 <div class="mainDiv">
+    <input id="controlerUrl" type="hidden" value="@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()" />
     <div class="logoDiv">
 
     </div>
@@ -56,7 +57,7 @@
           <div> <input id="stateInput" type="text" class="form-control" placeholder="State" /><i class="glyphicon glyphicon-globe form-control iconStyle"></i></div>
           <div> <input id="cityInput" type="text" class="form-control" placeholder="City" /><i class="glyphicon glyphicon-tower form-control iconStyle"></i></div>
           <div> <input id="streetInput" type="text" class="form-control" placeholder="Street" /><i class="glyphicon glyphicon-road form-control iconStyle"></i></div>
-            <button id="submitButton" class="btn-danger">Register</button><label id="actionResultLabel" style="margin-left:15px;"></label>
+            <button id="submitButton" class="btn btn-danger">Register</button><label id="actionResultLabel" style="margin-left:15px;"></label>
         </div>
     </div>
 </div>

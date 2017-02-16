@@ -15,6 +15,10 @@
             float:right;
             margin:15px;
         }
+        #loginDiv{
+            height:60px;
+            background-color:rgb(128, 128, 128);
+        }
     </style>
 
 </head>
@@ -48,6 +52,7 @@
         <button id="loginButton" class="loginInput btn btn-danger">Login</button>
         <input id="usernameInput" type="text" class="form-control loginInput" placeholder="Username" style="float:right;"/>
         <input id="emailInput" type="email" class="form-control loginInput" placeholder="Email" style="float:right;" />
+        <label id="resultLabel" class="loginInput" style="margin-top:23px;"></label>
       
 
    </div>
@@ -67,6 +72,34 @@
         $("#loginAnchor").on('click', function () {
 
             $("#loginDiv").show();
+
+        });
+        $("#loginButton").on('click', function () {
+
+
+       
+            if ($("#usernameInput").val() == "" || $("#emailInput").val() == "") {
+                $("#resultLabel").text("All fields are required!");
+                $("#resultLabel").css("color", "red");
+                return;
+            }
+
+
+
+            $.ajax(
+                {
+                    type: 'POST',
+                    url: '/Home/Login',
+                    data: JSON.stringify({ username: $("#usernameInput").val(), password: $("#emailInput").val() }),
+                    contentType: 'application/json'
+                }).success(function (result, status, error) {
+                    var message = $.parseJSON(result).message;
+                    $("#resultLabel").text(message);
+                    $("#resultLabel").css("color", "green");
+                    $("#loginDiv").hide();
+                    //location.href = $("#controlerUrl").val();
+                    location.href = "@Url.Action("Index","Home")";
+                });
 
         });
     </script>

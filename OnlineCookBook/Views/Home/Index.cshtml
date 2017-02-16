@@ -1,8 +1,20 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@{
+    if(ViewBag.User==null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+    }
+        
 
+}
 <div class="main-index-div">
+    <input id="controlerUrl" type="hidden" value="@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()" />
     <div class="row main-title container">
         <span class="titleSpan">
             Welcome to your personal cookBook asistent, where safety is number one priority
@@ -28,4 +40,7 @@
         </div>        
     </div>
 </div>
+<script>
+    $("#usernameLabel").text("@ViewBag.User");
+</script>
 <script src="~/Scripts/Index.js"></script>

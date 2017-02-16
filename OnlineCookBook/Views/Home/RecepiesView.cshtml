@@ -2,9 +2,22 @@
 @{
     ViewBag.Title = "Recepies";
 }
+@{
+    if (ViewBag.User == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+    }
+
+
+}
 <link href="~/Content/ViewsCSS/RecepiesViewCSS.css" rel="stylesheet" />
 
 <div class="topImage">
+    <input id="controlerUrl" type="hidden" value="@HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()" />
     Breakfast is most important Meal of a day
 </div>
 @foreach (var recipe in Model)
@@ -23,7 +36,7 @@
                     @recipe.ShortDsc
                 </div>
                 <div class="TimeToPrepareDiv">@recipe.PrepareTime min <i class="glyphicon glyphicon-ban-circle"></i>
-                <button id=@recipe.Id class="viewButton btn-danger">View Recepie</button>
+                <button id=@recipe.Id class="viewButton btn btn-danger">View Recepie</button>
                 </div>
             </div>
         </div>
