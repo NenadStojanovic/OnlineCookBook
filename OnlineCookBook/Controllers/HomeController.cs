@@ -38,25 +38,31 @@ namespace OnlineCookBook.Controllers
         
         public ActionResult RecepiesView(string type)
         {
-            string t = "dinner";
-            List<Recipe> r = storage.ReturnRecipesByCategory(t);
-
-            
-
-            List<Recipe> lr = storage.ReturnRecipesByPartialName("not");
-
-
-            Recipe p = new Recipe();
-            ObjectId idp = ObjectId.Parse("589dbe11e4661e631df197c6");
-            //p.Id = idp;
-            p.Name = "janko";
-            storage.InsertRecipeToDB(p);
-
-            Recipe l = storage.ReturnRecipeById("589dbe11e4661e631df197c5");
-
-            storage.DeleteRecipeFromDB(idp);
-
+            List<Recipe> r = storage.ReturnRecipesByCategory(type);
             return View(r);
+        }
+
+        public ActionResult FullRecepieView(string recepieId)
+        {
+            Recipe r = storage.ReturnRecipeById(recepieId);
+            return View(r);
+        }
+
+        public ActionResult RegisterView()
+        {
+            
+            return View();
+        }
+
+        public ActionResult RegisterUser(User user)
+        {
+            string message="sadasd";
+            return Json("{ \"message\" :\"" + message + "\"  }");
+        }
+        public ActionResult Login(string username, string password)
+        {
+            string message = "sadasd";
+            return Json("{ \"message\" :\"" + message + "\"  }");
         }
     }
 }

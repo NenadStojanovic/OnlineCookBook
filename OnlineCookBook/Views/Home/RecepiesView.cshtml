@@ -1,12 +1,40 @@
 ﻿@model List<OnlineCookBook.MongoDB_DataLayer.Entities.Recipe>
 @{
-    ViewBag.Title = "RecepiesView";
+    ViewBag.Title = "Recepies";
 }
+<link href="~/Content/ViewsCSS/RecepiesViewCSS.css" rel="stylesheet" />
 
+<div class="topImage">
+    Breakfast is most important Meal of a day
+</div>
 @foreach (var recipe in Model)
 {
-    <h2>@recipe.Name</h2>
-    <h2>@recipe.ShortDsc</h2>
+
+    <div class="container mainDiv">
+        <div class="itemDiv" >
+            @Html.Hidden("RecepieId", @recipe.Id)
+            <div class="recepieNameDiv">@recipe.Name</div>
+            <div class="ImageDiv">
+                <img class="leftImage" src=@recipe.Image />
+
+            </div>
+            <div class="dcsDiv">
+                <div class="descriptionDiv">
+                    @recipe.ShortDsc
+                </div>
+                <div class="TimeToPrepareDiv">@recipe.PrepareTime min <i class="glyphicon glyphicon-ban-circle"></i>
+                <button id=@recipe.Id class="viewButton btn-danger">View Recepie</button>
+                </div>
+            </div>
+        </div>
+    </div>
 }
 
+<script>
+    $(".viewButton").on('click', function (e) {
+
+        window.location.href = "FullRecepieView?recepieId=" + e.currentTarget.id;
+
+    });
+</script>
 

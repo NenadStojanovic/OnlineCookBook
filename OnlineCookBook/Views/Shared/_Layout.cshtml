@@ -1,13 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Online CookBook</title>
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/ViewScripts/LayoutJS.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .loginInput{
+            float:right;
+            margin:15px;
+        }
+    </style>
 
 </head>
 <body>
@@ -27,19 +35,41 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Register", "RegisterView", "Home")</li>
+                    <li><a id="loginAnchor">Log in</a></li>
+                </ul>
             </div>
         </div>
     </div>
-   
+    <div id="loginDiv">
+      
+        <button id="hideButton" class="loginInput btn btn-danger"><i class="glyphicon glyphicon-chevron-up"></i></button>
+        <button id="loginButton" class="loginInput btn btn-danger">Login</button>
+        <input id="usernameInput" type="text" class="form-control loginInput" placeholder="Username" style="float:right;"/>
+        <input id="emailInput" type="email" class="form-control loginInput" placeholder="Email" style="float:right;" />
+      
+
+   </div>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Online CookBook</p>
-        </footer>
 
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $("#loginDiv").hide();
+        $("#hideButton").on('click', function () {
+
+            $("#loginDiv").hide();
+
+        });
+
+        $("#loginAnchor").on('click', function () {
+
+            $("#loginDiv").show();
+
+        });
+    </script>
 </body>
+
 </html>

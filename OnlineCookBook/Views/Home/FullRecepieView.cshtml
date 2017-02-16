@@ -1,0 +1,52 @@
+﻿@model OnlineCookBook.MongoDB_DataLayer.Entities.Recipe
+@{
+    ViewBag.Title = "Full Recepie";
+}
+
+<link href="~/Content/ViewsCSS/FullRecepiesVIewCSS.css" rel="stylesheet" />
+<div class="container">
+    <div class="RecepieNameDiv">
+        @Model.Name
+    </div>
+    <img class="imageImg" src=@Model.Image>
+    <div class="ingredinesDiv">
+        <div class="titleDiv">Ingredients:</div>
+        @foreach (var i in Model.Ingredients)
+        {
+            <div style="margin-left:55px">
+                <i class="glyphicon glyphicon-arrow-right"></i>
+                <span class="quatntitySpan">@i.Quantity</span>
+                <span class="quatntitySpan">@i.Name</span>
+            </div>
+        }
+    </div>
+    <div class="fullDescriptionDiv">
+        <div class="titleDiv">Instructions:</div>
+        <div class="descDiv">@Model.LongDsc</div>
+    </div>
+    <div class="comentsDiv">
+       
+            
+       
+        <div class="leftSection">
+@for (int i = 0; i < 7; i++)
+{
+            <div class="comment">
+                <div class="commentInfo">
+                    <span class="commentInfoNameSpan">Marko</span>
+                    <span class="commentInfoDateSpan">21.12.2016.</span>
+                </div>
+                <div class="commentValDiv">
+                    Lorem ipsum dolor sit amet, sit ei debitis qualisque scripserit, est ex admodum detraxit adolescens. Diam inani audire quo ei, aperiam viderer propriae no per. Nam no libris option. Oratio luptatum necessitatibus no eam, detracto apeirian lucilius vix ei, audire inimicus cotidieque vix ex. Aliquip laoreet singulis et mei. In quo modus tollit putant, ius iriure nostrum et. Id mei atqui lobortis, ei quo
+                </div>
+            </div>
+}
+        </div>
+        <div class="rightSection">
+            <textarea class="textInput"></textarea>
+            <button class="submitCommnent">Submit</button>
+        </div>
+        
+    </div>
+</div>
+

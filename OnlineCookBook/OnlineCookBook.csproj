@@ -193,6 +193,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-spacelab.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\breakfast_img.jpg" />
@@ -200,6 +201,9 @@
     <Content Include="Content\img\cookBook Wallpaper.jpg" />
     <Content Include="Content\img\dinner_img.jpg" />
     <Content Include="Content\img\lunch_img.jpg" />
+    <Content Include="Content\ViewsCSS\FullRecepiesVIewCSS.css" />
+    <Content Include="Content\ViewsCSS\RecepiesViewCSS.css" />
+    <Content Include="Content\ViewsCSS\RegisterVIewCSS.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -218,6 +222,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ViewScripts\LayoutJS.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -250,10 +255,11 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\RecepiesView.cshtml" />
+    <Content Include="Views\Home\FullRecepieView.cshtml" />
+    <Content Include="Views\Home\RegisterView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\ViewScripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

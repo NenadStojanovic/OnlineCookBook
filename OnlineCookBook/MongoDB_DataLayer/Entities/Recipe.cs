@@ -25,7 +25,7 @@ namespace OnlineCookBook.MongoDB_DataLayer.Entities
         public string Status { get; set; }
 
         public string Image { get; set; }
-
+        public List<string> Tags { get; set; }
         public User User { get; set; }
 
         public List<Ingredient> Ingredients { get; set; }

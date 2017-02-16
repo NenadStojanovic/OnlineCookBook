@@ -30,7 +30,5 @@ namespace OnlineCookBook.MongoDB_DataLayer.Entities
 
         public string Street { get; set; }
 
-        public int Housenum { get; set; }
-
     }
 }
